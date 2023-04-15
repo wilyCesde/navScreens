@@ -1,25 +1,38 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();//variable almacenar los componentes
+
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+
+        initialRouteName="Home">
+
+        <Stack.Screen name="Contacts" component={ContactScreen} options={{ title: 'Contáctenos' }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio' }} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Perfil del usuario' }} />
-        <Stack.Screen name="Contacts" component={ContactScreen} options={{ title: 'Contáctenos' }} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={{ fontWeight: 'bold' }}>Estamos en Home</Text>
+      <Text style={{ fontWeight: 'bold', marginBottom: 10 }}>Estamos en Home</Text>
+      <Button
+        onPress={() => {
+          navigation.navigate('Profile')
+        }}
+        title="Ir al perfil de usuario"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
     </View>
   )
 }
