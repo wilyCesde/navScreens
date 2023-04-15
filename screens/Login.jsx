@@ -1,27 +1,23 @@
-import React, { useState } from 'react'
-import { TextInput } from 'react-native-paper';
+import { View, Text, Button, } from 'react-native'
+import { styles } from '../assets/style/styles'
 
-export default function Login({ navigation }) {
+export default function Login({navigation}) {
 
-  const [user, setUser] = useState('')
-  const [password, setPassword] = useState('')
-  const [role, setRole] = useState('')
-  const Login = () => {
+  let user=''
+  let password=''
+  let role=''
 
-    if (user === 'example' && password === 'password' && role === 'admin') {
-      navigation.navigate('Home')
+  
 
-    }
-  }
   return (
-    <TextInput
-      label="Email"
-      value={text}
-      onChangeText={text => setText(text)}
-    />
-
+    <View style={styles.container}>
+      <Text style={{ fontWeight: 'bold', marginBottom: 10 }}>Iniciar sesion</Text>
+      <Button
+        onPress={() => {
+          navigation.navigate('Login', { user: user, password: password, role: role })
+        }}
+        title="Iniciar sesion"
+      />
+    </View>
   )
 }
-
-
-
