@@ -1,12 +1,12 @@
 import { View, Text, Button, } from 'react-native'
 import { styles } from '../assets/style/styles'
+import React, { useState } from 'react'
 
 export default function Login({navigation}) {
 
-  let user=''
-  let password=''
-  let role=''
-
+  const [user, setUser] = useState('')
+  const [password, setPassword] = useState('')
+  const [role, setRole] = useState('')
   
 
   return (
@@ -21,3 +21,6 @@ export default function Login({navigation}) {
     </View>
   )
 }
+
+
+
