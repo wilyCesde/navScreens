@@ -8,6 +8,8 @@ export default function ProfileScreen({navigation}) {
   let email = 'cosas@gmail.com';
   let phone = '604356789';
 
+  
+
   return (
     <View style={styles.container}>
       <Text style={{ fontWeight: 'bold', marginBottom: 10 }}>Estamos en el perfil del usuario</Text>
