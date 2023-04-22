@@ -1,7 +1,7 @@
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialIcons } from '@expo/vector-icons'//iconos material desing
-import HomeScreen from './ContactScreen';
+import HomeScreen from './HomeScreen';
 import ProfileScreen from "./ProfileScreen";
 import ContactScreen from "./ContactScreen";
 
@@ -22,7 +22,9 @@ export default function HomeTabs() {
         tabBarInactiveBackgroundColor: 'gray'
       }}
     >
+
       <tab.Screen name="Home" component={HomeScreen} options={{
+         tabBarStyle:{display:'none'},
         tabBarIcon: () => (<MaterialIcons name='home' size={22} />)
       }} />
       <tab.Screen name="Prorofile" component={ProfileScreen} options={{
