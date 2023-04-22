@@ -13,12 +13,13 @@ export default function ProfileScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={{ fontWeight: 'bold', marginBottom: 10 }}>Estamos en el perfil del usuario</Text>
-      <Button
+      {/* <Button
         onPress={() => {
           navigation.navigate('Contacts', { email: email, phone: phone })
         }}
         title="Contáctenos"
-      />
+      /> */}
+      
     </View>
   )
 }
