@@ -38,7 +38,17 @@ function HomeScreen({ navigation }) {
         style={{ marginTop: 20 }}
         icon="login"
         mode="contained"
-        onPress={() => {}}
+        onPress={() => {
+          let fuser = users.find(usr=>username ==username &&
+            usr.password==password);
+            if (fuser !=undefined) {
+             const {name,username}=fuser;
+             navigation.navigate('profile',{name:name ,username:username}) 
+             setErrormess('')
+            } else {
+              setErrormess('usuario y o contraseña inválidos')
+            }
+        }}
       >
         Inciar Sesión
       </Button>
